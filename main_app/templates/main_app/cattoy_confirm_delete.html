@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h2>Delete Cat Toy</h2>
+    <h4>Are you sure you want to delete <strong>{{ cattoy }}</strong></h4>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Yes, Delete!" class="btn btn-danger">
+        <a href="{% url 'cattoys_show' cattoy.id %}" class="btn btn-secondary">Cancel</a>
+    </form>
+{% endblock %}
